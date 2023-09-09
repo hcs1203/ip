@@ -1,5 +1,3 @@
-package Duke;
-
 import java.io.File;
 
 public class Duke {
