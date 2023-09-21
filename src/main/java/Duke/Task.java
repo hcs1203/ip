@@ -32,4 +32,8 @@ class Task {
             e.printStackTrace();
         }
     }
+
+    public String getName() {
+        return this.name;
+    }
 }

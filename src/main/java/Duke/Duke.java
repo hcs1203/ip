@@ -164,6 +164,25 @@ public class Duke {
                 tasks.add(event);
                 event.addToFile();
                 count++;
+            } else if (input.toLowerCase().startsWith("find ")) {
+                String keyword = input.substring(5).toLowerCase();
+                System.out.println(div + "Here are the matching tasks in your list:");
+                int matchingTasksCount = 0;
+
+                for (int i = 0; i < count; i++) {
+                    Task task = tasks.get(i);
+                    if (task.getName().toLowerCase().contains(keyword)) {
+                        matchingTasksCount++;
+                        System.out.println(matchingTasksCount + ". " + task.printTask());
+                    }
+                }
+
+                if (matchingTasksCount == 0) {
+                    System.out.println("No matching tasks found.");
+                }
+                System.out.println(div);
+                input = scanner.nextLine();
+                continue;
             } else {
                 System.out.println("OOPS!!! I'm sorry, but I don't know what that means :-(\n" + div);
                 input = scanner.nextLine();
