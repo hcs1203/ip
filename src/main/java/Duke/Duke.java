@@ -5,17 +5,29 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * The Duke class represents a simple task management program.
+ */
 public class Duke {
     private Storage storage;
     private TaskList tasks;
     private Ui ui;
 
+    /**
+     * Constructs a Duke object.
+     *
+     * @param filePath The file path for storing task data.
+     */
     public Duke(String filePath) {
         ui = new Ui();
         storage = new Storage();
         tasks = new TaskList();
     }
 
+    /**
+     * The main method of the Duke program.
+     *
+     */
     public void run() {
         String div = "____________________________________________________________\n";
 
@@ -158,6 +170,11 @@ public class Duke {
         System.out.println(div + "Bye. Hope to see you again soon!\n" + div);
     }
 
+    /**
+     * The main method to start the Duke program.
+     *
+     * @param args Command line arguments (not used).
+     */
     public static void main(String[] args) {
         new Duke("data/tasks.txt").run();
     }
