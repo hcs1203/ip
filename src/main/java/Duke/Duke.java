@@ -12,6 +12,7 @@ public class Duke {
     private Storage storage;
     private TaskList tasks;
     private Ui ui;
+    private String filePath;
 
     /**
      * Constructs a Duke object.
@@ -22,6 +23,7 @@ public class Duke {
         ui = new Ui();
         storage = new Storage();
         tasks = new TaskList();
+        this.filePath = filePath;
     }
 
     /**
@@ -34,7 +36,7 @@ public class Duke {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Task> tasks = new ArrayList<>();
         int count = 0;
-        File file = new File("data/data.txt");
+        File file = new File(filePath);
         try {
             Scanner fileReader = new Scanner(file);
             while (fileReader.hasNextLine()) {
@@ -70,8 +72,10 @@ public class Duke {
         } catch (FileNotFoundException e) {
             System.out.println("Error: File not found.");
         }
+
         System.out.println(div + "Hello! I'm CarrotCake\nWhat can I do for you?\n" + div);
         String input = scanner.nextLine();
+
         while (!input.equalsIgnoreCase("bye")) {
             System.out.println(div);
             if (input.equalsIgnoreCase("list")) {
