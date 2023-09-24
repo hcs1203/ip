@@ -10,11 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Storage {
-
-    private static LocalDateTime parseSavedDateTime(String dateTimeString) {
-        return LocalDateTime.parse(dateTimeString, DateTimeFormatter.ofPattern("MMM d yyyy HHmm"));
-    }
-
     private String filePath;
 
     public Storage(String filePath) {
