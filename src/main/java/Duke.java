@@ -1,22 +1,34 @@
-import java.io.File;
-
 public class Duke {
-    private Storage storage;
-    private TaskList tasks;
-    private Ui ui;
 
+    private Ui ui;
+    private Storage storage;
+    private Parser parser;
+    private TaskList tasks;
+
+    // Initialize the classes in the Duke constructor.
     public Duke(String filePath) {
-        ui = new Ui();
-        storage = new Storage(new File("data/tasks.txt"));
-        tasks = new TaskList(storage.load());
+        this.ui = new Ui();
+        this.storage = new Storage(filePath);
+        tasks = new TaskList(storage.loadTasks());
+        this.parser = new Parser();
     }
 
     public void run() {
-        ui.showWelcomeMessage();
-        ui.run();
+        ui.welcome();
+        boolean isExit = false;
+        while (!isExit) {
+            try {
+                String fullCommand = ui.readCommand();
+                Command c = parser.parse(fullCommand);
+                c.execute(tasks, ui, storage);
+                isExit = c.isExit();
+            } catch (DukeException e) {
+                ui.display(e.getMessage());
+            }
+        }
     }
 
     public static void main(String[] args) {
-        new Duke("data/tasks.txt").run();
+        new Duke("./data/duke.txt").run();
     }
 }
