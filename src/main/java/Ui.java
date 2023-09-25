@@ -1,5 +1,3 @@
-package Duke;
-
 import java.util.Scanner;
 
 public class Ui {
@@ -18,11 +16,11 @@ public class Ui {
     }
 
     public void welcome() {
-        display(div + "Hello! I'm CarrotCake\nWhat can I do for you?\n" + div);
+        display("Hello! I'm CarrotCake\nWhat can I do for you?\n");
     }
 
     public void exit() {
-        display(div + "Bye. Hope to see you again soon!\n" + div);
+        display("Bye. Hope to see you again soon!\n");
     }
 
     public void displayAddedTask(Task task, TaskList tasks) {

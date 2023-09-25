@@ -1,5 +1,3 @@
-package Duke;
-
 public class ListCommand extends Command {
 
     @Override

@@ -1,5 +1,3 @@
-package Duke;
-
 public class DeleteCommand extends Command {
     private int taskIndexToDelete;
 

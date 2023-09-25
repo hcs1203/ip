@@ -1,5 +1,3 @@
-package Duke;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -39,5 +37,10 @@ class Events extends Task {
             System.out.println("An error has occurred.");
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String toSaveString() {
+        return "E | " + (isDone ? "1" : "0") + " | " + this.name + " | " + this.startDateTime + " | " + this.endDateTime;
     }
 }

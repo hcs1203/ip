@@ -1,5 +1,3 @@
-package Duke;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -33,4 +31,10 @@ class Deadline extends Task {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public String toSaveString() {
+        return "D | " + (isDone ? "1" : "0") + " | " + this.name + " | " + this.dueDate;
+    }
+
 }

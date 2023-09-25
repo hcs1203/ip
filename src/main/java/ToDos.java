@@ -1,5 +1,3 @@
-package Duke;
-
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -24,5 +22,10 @@ class ToDos extends Task {
             System.out.println("An error has occurred.");
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String toSaveString() {
+        return "T | " + (isDone ? "1" : "0") + " | " + this.name;
     }
 }
