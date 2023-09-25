@@ -22,6 +22,7 @@ public class Duke {
                 Command c = parser.parse(fullCommand);
                 c.execute(tasks, ui, storage);
                 isExit = c.isExit();
+
             } catch (DukeException e) {
                 ui.display(e.getMessage());
             }
