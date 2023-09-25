@@ -1,3 +1,5 @@
+package Duke;
+
 public class UnmarkCommand extends Command {
     private int taskIndexToUnmark;
 

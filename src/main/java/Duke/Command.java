@@ -1,3 +1,5 @@
+package Duke;
+
 public abstract class Command {
     protected boolean isExit = false;
 

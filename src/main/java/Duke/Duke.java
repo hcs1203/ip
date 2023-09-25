@@ -1,3 +1,5 @@
+package Duke;
+
 public class Duke {
 
     private Ui ui;
@@ -5,7 +7,7 @@ public class Duke {
     private Parser parser;
     private TaskList tasks;
 
-    // Initialize the classes in the Duke constructor.
+    // Initialize the classes in the Duke.Duke constructor.
     public Duke(String filePath) {
         this.ui = new Ui();
         this.storage = new Storage(filePath);
