@@ -1,3 +1,5 @@
+package Duke;
+
 public class AddCommand extends Command {
     private Task taskToAdd;
 

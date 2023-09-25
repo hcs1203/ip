@@ -1,3 +1,5 @@
+package Duke;
+
 public class MarkCommand extends Command {
     private int taskIndexToMark;
 
